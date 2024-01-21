@@ -75,7 +75,7 @@
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="r5x-bz-KD1" firstAttribute="leading" secondItem="HXA-aE-sPm" secondAttribute="leading" constant="25.666666666666671" id="Syb-Nx-xB4"/>
+                                            <constraint firstItem="r5x-bz-KD1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HXA-aE-sPm" secondAttribute="leading" constant="25.666666666666671" id="3Gu-G5-Vbd"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cf1-VV-rkg">
@@ -84,22 +84,22 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MdQ-Jc-dQt">
                                                 <rect key="frame" x="-2" y="0.0" width="194" height="31"/>
                                                 <connections>
-                                                    <action selector="changedLabelValue" destination="BYZ-38-t0r" eventType="valueChanged" id="Jsx-KH-jgG"/>
-                                                    <action selector="changedViewBaground" destination="BYZ-38-t0r" eventType="valueChanged" id="ifp-1c-SWZ"/>
+                                                    <action selector="changeLabelValue" destination="BYZ-38-t0r" eventType="valueChanged" id="Jsx-KH-jgG"/>
+                                                    <action selector="changeViewBackround" destination="BYZ-38-t0r" eventType="valueChanged" id="ifp-1c-SWZ"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="USM-pY-BHV">
                                                 <rect key="frame" x="-2" y="45" width="194" height="31"/>
                                                 <connections>
-                                                    <action selector="changedLabelValue" destination="BYZ-38-t0r" eventType="valueChanged" id="Tad-ag-J9V"/>
-                                                    <action selector="changedViewBaground" destination="BYZ-38-t0r" eventType="valueChanged" id="Fkt-yw-c5a"/>
+                                                    <action selector="changeLabelValue" destination="BYZ-38-t0r" eventType="valueChanged" id="Tad-ag-J9V"/>
+                                                    <action selector="changeViewBackround" destination="BYZ-38-t0r" eventType="valueChanged" id="Fkt-yw-c5a"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="l3L-bv-fFd">
                                                 <rect key="frame" x="-2" y="90" width="194" height="31"/>
                                                 <connections>
-                                                    <action selector="changedLabelValue" destination="BYZ-38-t0r" eventType="valueChanged" id="SpH-qu-uo9"/>
-                                                    <action selector="changedViewBaground" destination="BYZ-38-t0r" eventType="valueChanged" id="z2x-5K-jYV"/>
+                                                    <action selector="changeLabelValue" destination="BYZ-38-t0r" eventType="valueChanged" id="SpH-qu-uo9"/>
+                                                    <action selector="changeViewBackround" destination="BYZ-38-t0r" eventType="valueChanged" id="z2x-5K-jYV"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -111,6 +111,9 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="HXA-aE-sPm" firstAttribute="leading" secondItem="QJA-Ma-9aI" secondAttribute="trailing" constant="9.9999999999999858" id="N5Y-ka-4o0"/>
+                                    <constraint firstItem="HXA-aE-sPm" firstAttribute="leading" secondItem="QJA-Ma-9aI" secondAttribute="trailing" constant="10" id="Wnr-V5-hql"/>
+                                    <constraint firstItem="cf1-VV-rkg" firstAttribute="leading" secondItem="HXA-aE-sPm" secondAttribute="trailing" constant="10" id="YUh-TY-LCo"/>
                                     <constraint firstItem="cf1-VV-rkg" firstAttribute="leading" secondItem="M1I-1E-yqE" secondAttribute="leading" constant="155" id="q99-PT-Z1s"/>
                                 </constraints>
                             </stackView>
@@ -128,13 +131,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="labelBlue" destination="KEQ-PN-bZb" id="lwp-Sx-v09"/>
-                        <outlet property="labelGreen" destination="mqk-vn-12U" id="fRK-cW-Pla"/>
-                        <outlet property="labelRed" destination="r5x-bz-KD1" id="fWW-aP-9Wj"/>
-                        <outlet property="sliderBlue" destination="l3L-bv-fFd" id="6dT-aG-8lk"/>
-                        <outlet property="sliderGreen" destination="USM-pY-BHV" id="Hpe-b0-OuV"/>
-                        <outlet property="sliderRed" destination="MdQ-Jc-dQt" id="lfG-ce-lyZ"/>
-                        <outlet property="viewChangeColour" destination="dGr-Ya-8li" id="NNt-P8-drX"/>
+                        <outlet property="blueLabel" destination="KEQ-PN-bZb" id="lwp-Sx-v09"/>
+                        <outlet property="blueSlider" destination="l3L-bv-fFd" id="6dT-aG-8lk"/>
+                        <outlet property="colourView" destination="dGr-Ya-8li" id="NNt-P8-drX"/>
+                        <outlet property="greenLabel" destination="mqk-vn-12U" id="fRK-cW-Pla"/>
+                        <outlet property="greenSlider" destination="USM-pY-BHV" id="Hpe-b0-OuV"/>
+                        <outlet property="redLabel" destination="r5x-bz-KD1" id="fWW-aP-9Wj"/>
+                        <outlet property="redSlider" destination="MdQ-Jc-dQt" id="lfG-ce-lyZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

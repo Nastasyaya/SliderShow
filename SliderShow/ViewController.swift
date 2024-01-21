@@ -8,61 +8,64 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    @IBOutlet var viewChangeColour: UIView!
-    
-    @IBOutlet var labelRed: UILabel!
-    @IBOutlet var labelGreen: UILabel!
-    @IBOutlet var labelBlue: UILabel!
-    
-    @IBOutlet var sliderRed: UISlider!
-    @IBOutlet var sliderGreen: UISlider!
-    @IBOutlet var sliderBlue: UISlider!
-    
+
+    @IBOutlet var colourView: UIView!
+
+    @IBOutlet var redLabel: UILabel!
+    @IBOutlet var greenLabel: UILabel!
+    @IBOutlet var blueLabel: UILabel!
+
+    @IBOutlet var redSlider: UISlider!
+    @IBOutlet var greenSlider: UISlider!
+    @IBOutlet var blueSlider: UISlider!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewChangeColour.layer.cornerRadius = 10
-        
-        // Label
-        labelRed.text = "0.00"
-        labelGreen.text = "0.00"
-        labelBlue.text = "0.00"
-        
-        // Slider
-        sliderRed.minimumTrackTintColor = .red
-        sliderGreen.minimumTrackTintColor = .green
-        sliderBlue.minimumTrackTintColor = .blue
-        
-        // Slider value
-        sliderRed.value = 0
-        sliderRed.minimumValue = 0
-        sliderRed.maximumValue = 1
-        
-        sliderGreen.value = 0
-        sliderGreen.minimumValue = 0
-        sliderGreen.maximumValue = 1
-        
-        sliderBlue.value = 0
-        sliderBlue.minimumValue = 0
-        sliderBlue.maximumValue = 1
+
+        colourView.layer.cornerRadius = 10
+
+        // Labels
+        redLabel.text = "0.00"
+        greenLabel.text = "0.00"
+        blueLabel.text = "0.00"
+
+        // Sliders
+        redSlider.minimumTrackTintColor = .red
+        greenSlider.minimumTrackTintColor = .green
+        blueSlider.minimumTrackTintColor = .blue
+
+        // Sliders value
+        redSlider.value = 0
+        redSlider.minimumValue = 0
+        redSlider.maximumValue = 1
+
+        greenSlider.value = 0
+        greenSlider.minimumValue = 0
+        greenSlider.maximumValue = 1
+
+        blueSlider.value = 0
+        blueSlider.minimumValue = 0
+        blueSlider.maximumValue = 1
     }
-    
-    
-    func changeColourRed() {
-        viewChangeColour.backgroundColor = UIColor(red: CGFloat(sliderRed.value), green: CGFloat(sliderGreen.value), blue: CGFloat(sliderBlue.value), alpha: 1)
+
+    private func changeColour() {
+        colourView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
     }
-    func labelValue() {
-        labelRed.text = String(sliderRed.value)
-        labelGreen.text = String(sliderGreen.value)
-        labelBlue.text = String(sliderBlue.value)
+    private func installLabelValues() {
+        redLabel.text = String(format: "%.2f", redSlider.value)
+        greenLabel.text = String(format: "%.2f", greenSlider.value)
+        blueLabel.text = String(format: "%.2f", blueSlider.value)
     }
-    
-    @IBAction func changedViewBaground() {
-        changeColourRed()
+
+    @IBAction func changeViewBackround() {
+        changeColour()
     }
-    @IBAction func changedLabelValue() {
-        labelValue()
+    @IBAction func changeLabelValue() {
+        installLabelValues()
     }
 }
-
